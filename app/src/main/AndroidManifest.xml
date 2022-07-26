@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.applinkstest">
-
+    <uses-permission android:name="android.permission.QUERY_ALL_PACKAGES"/>
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -9,6 +9,26 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppLinksTest">
+        <activity
+            android:name=".MainActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+            <intent-filter android:autoVerify="true">
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data
+                    android:scheme="test"
+                    android:host="main"
+                    />
+            </intent-filter>
+        </activity>
         <activity
             android:name=".AppLinksActivity"
             android:exported="true">
@@ -19,9 +39,9 @@
                 <category android:name="android.intent.category.BROWSABLE" />
 
                 <data
-                    android:scheme="http"
+                    android:scheme="https"
                     android:host="www.flexofficial.in"
-                    android:pathPrefix="/applinkstest"
+                    android:path="/testRedirect"
                     />
             </intent-filter>
             <intent-filter android:autoVerify="true">
@@ -31,32 +51,17 @@
                 <category android:name="android.intent.category.BROWSABLE" />
 
                 <data
-                    android:scheme="https"
-                    android:host="www.flexofficial.in"
+                    android:scheme="test"
+                    android:host="deeplink"
                     />
-            </intent-filter>
-            <intent-filter android:autoVerify="true">
-                <action android:name="android.intent.action.VIEW" />
-
-                <category android:name="android.intent.category.DEFAULT" />
-                <category android:name="android.intent.category.BROWSABLE" />
-
-                <data
-                    android:scheme="https"
-                    android:host="www.flexofficial.in"
-                    android:pathPrefix="/moneycontrol"
-                    />
-            </intent-filter>
-        </activity>
-        <activity
-            android:name=".MainActivity"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
     </application>
-
+    <queries>
+<!--        <intent>-->
+<!--            <action android:name="android.intent.action.MAIN" />-->
+<!--        </intent>-->
+<!--        <package android:name="com.zerodha.kite3" />-->
+        <package android:name="in.upstox.pro" />
+    </queries>
 </manifest>

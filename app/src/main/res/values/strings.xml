@@ -1,3 +1,6 @@
 <resources>
     <string name="app_name">App Links Test</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="loading_fragment_title">Loading Fragment</string>
+    <string name="fallback_fragment_title">Choose which option to login</string>
 </resources>
