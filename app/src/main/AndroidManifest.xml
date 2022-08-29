@@ -41,7 +41,6 @@
                 <data
                     android:scheme="https"
                     android:host="www.flexofficial.in"
-                    android:path="/testRedirect"
                     />
             </intent-filter>
             <intent-filter android:autoVerify="true">
